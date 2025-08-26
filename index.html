@@ -1,32 +1,246 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Taha ValizadehAslani</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taha ValizadehAslani — Personal Website</title>
+  <meta name="description" content="Personal site for Taha ValizadehAslani — machine learning engineer and researcher.">
+  <meta name="color-scheme" content="light dark">
+  <!-- Open Graph for link previews -->
+  <meta property="og:title" content="Taha ValizadehAslani — Personal Website">
+  <meta property="og:description" content="Machine Learning Engineer • Researcher • Network Optimization">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:url" content="https://example.com">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root {
+      --bg: #fcfcfd;
+      --bg-alt: #f3f4f6;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --bg-alt: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --card: #0f172a;
+        --border: #1f2937;
+        --shadow: 0 10px 25px rgba(0,0,0,.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(99,102,241,.08), transparent 60%),
+                  radial-gradient(900px 500px at 100% 10%, rgba(96,165,250,.08), transparent 60%),
+                  var(--bg);
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    /* Header */
+    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(6px); background: color-mix(in oklab, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); z-index: 50; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .2px; }
+    .avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+    .links a { text-decoration: none; color: var(--muted); margin-left: 18px; font-weight: 600; }
+    .links a:hover { color: var(--text); }
+    /* Hero */
+    .hero { padding: 72px 0 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 48px; } }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 10px; }
+    .hero p { margin: 0 0 24px; color: var(--muted); font-size: 18px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius: 999px; border:1px solid var(--border); text-decoration:none; font-weight:700; }
+    .btn.primary { background: var(--accent); color: white; border-color: color-mix(in oklab, var(--accent), black 10%); box-shadow: var(--shadow); }
+    .btn.primary:hover { filter: brightness(.98); transform: translateY(-1px); }
+    .btn.ghost:hover { background: var(--bg-alt); }
+    .hero-visual { position: relative; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .tag { display:inline-block; padding: 4px 10px; border-radius: 999px; border:1px solid var(--border); font-size: 12px; color: var(--muted); background: color-mix(in oklab, var(--bg), white 6%); }
+    /* Sections */
+    section { padding: 40px 0; }
+    h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 16px; }
+    .muted { color: var(--muted); }
+    /* Projects grid */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 980px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    .project { text-decoration: none; color: inherit; transition: transform .15s ease; }
+    .project:hover { transform: translateY(-3px); }
+    .project h3 { margin: 8px 0 6px; font-size: 18px; }
+    .project p { margin: 0; color: var(--muted); font-size: 14px; }
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); }
+    .social { display:flex; gap: 14px; align-items:center; }
+    .social a { display: inline-flex; align-items:center; gap:8px; color: var(--muted); text-decoration:none; font-weight:600; }
+    .social a:hover { color: var(--text); }
+    /* Small helpers */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  </style>
+  <script>
+    // Optional theme toggle (light/dark/system)
+    const applyTheme = (mode) => {
+      document.documentElement.dataset.theme = mode;
+      if (mode === 'light') document.documentElement.style.colorScheme = 'light';
+      else if (mode === 'dark') document.documentElement.style.colorScheme = 'dark';
+      else document.documentElement.style.colorScheme = 'light dark';
+      localStorage.setItem('theme', mode);
+    };
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      applyTheme(saved);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-theme]').forEach(btn => {
+        btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
+      });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Taha ValizadehAslani",
+    "url": "https://example.com",
+    "jobTitle": "Machine Learning Engineer",
+    "sameAs": [
+      "https://github.com/your-github",
+      "https://www.linkedin.com/in/your-linkedin"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="/avatar.jpg" alt="Avatar" class="avatar" onerror="this.style.display='none'">
+        <span>Taha ValizadehAslani</span>
+      </div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <span class="sr-only">Theme</span>
+        <a href="#" class="sr-only">Theme:</a>
+        <a href="#" data-theme="light" aria-label="Light mode" title="Light">☀️</a>
+        <a href="#" data-theme="dark" aria-label="Dark mode" title="Dark">🌙</a>
+        <a href="#" data-theme="system" aria-label="System theme" title="System">🖥️</a>
+      </nav>
+    </div>
+  </header>
 
-    
-    <h1>Taha ValizadehAslani (Ph.D.)</h1>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="tag">Machine Learning • Network Optimization</span>
+        <h1>Hi, I'm Taha — I build reliable data & ML systems and love turning complex networks into clear decisions.</h1>
+        <p class="muted">PhD engineer. Focused on forecasting, optimization (GA/PSO/ACO), and large‑scale data pipelines in Databricks & Spark.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn ghost" href="/Taha_ValizadehAslani_Resume.pdf" download>Download résumé</a>
+          <a class="btn ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card">
+          <img src="/cover.jpg" alt="Cover visual" style="width:100%; border-radius:12px; border:1px solid var(--border);" onerror="this.style.display='none'">
+          <p class="muted" style="margin-top:12px">Currently exploring <strong>multi‑objective PSO</strong> for network design and <strong>time‑series ensembles</strong> for city‑level scaling.</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p class="muted">I'm a machine learning engineer based in Philadelphia. I work across optimization, forecasting, and data engineering. I enjoy designing algorithms that balance performance with clarity, and building tidy pipelines teams can trust.</p>
+      <ul>
+        <li>PhD in Engineering (thesis on large language models).</li>
+        <li>10+ years of hands‑on ML and statistical modeling.</li>
+        <li>Comfortable across Python, Spark/Databricks, and AWS.</li>
+      </ul>
+    </section>
 
-    <a href="https://drive.google.com/file/d/1uOUNj2PBIcHeJd35O1pCTRXo033M0xyq/view?usp=sharing">My CV</a>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <a class="project card" href="#" target="_blank" rel="noreferrer noopener">
+          <span class="tag">Optimization</span>
+          <h3>Core‑Site Network Design via PSO</h3>
+          <p>Binary‑vector PSO minimizing cost & maximizing resiliency; custom constraints and SRLG awareness.</p>
+        </a>
+        <a class="project card" href="#" target="_blank" rel="noreferrer noopener">
+          <span class="tag">Forecasting</span>
+          <h3>City‑Level Traffic Forecasts</h3>
+          <p>ETS/Theta ensembles scaled to national totals with constrained reconciliation.</p>
+        </a>
+        <a class="project card" href="#" target="_blank" rel="noreferrer noopener">
+          <span class="tag">Data Engineering</span>
+          <h3>Quality‑Aware Pipelines</h3>
+          <p>Monitoring network utilization with built‑in data quality checks and alerts.</p>
+        </a>
+      </div>
+    </section>
 
-    <br> 
-    <a href="http://dx.doi.org/10.17918/00001912">My dissertation</a>
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Email me or use the form — I’ll get back to you soon.</p>
+      <div class="card" style="display:grid; gap:12px;">
+        <div class="social">
+          <a href="mailto:your.email@example.com" aria-label="Email">✉️ <span>your.email@example.com</span></a>
+          <a href="https://github.com/your-github" target="_blank" rel="noreferrer noopener" aria-label="GitHub">🧑‍💻 <span>GitHub</span></a>
+          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">💼 <span>LinkedIn</span></a>
+        </div>
+        <form action="https://formspree.io/f/your-form-id" method="POST" style="display:grid; gap:10px;">
+          <label>
+            <span class="sr-only">Your email</span>
+            <input name="email" type="email" required placeholder="Your email" style="width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:10px; background:var(--bg); color:var(--text);">
+          </label>
+          <label>
+            <span class="sr-only">Message</span>
+            <textarea name="message" rows="4" required placeholder="Your message" style="width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:10px; background:var(--bg); color:var(--text);"></textarea>
+          </label>
+          <button class="btn primary" style="width:max-content;">Send</button>
+        </form>
+      </div>
+    </section>
 
-    <br> 
-    <a href="https://scholar.google.com/citations?user=WxaHx0sAAAAJ&hl=en">My publications</a>
+    <footer>
+      <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <span>© <span id="year"></span> Taha ValizadehAslani</span>
+        <div class="social">
+          <a href="/Taha_ValizadehAslani_Resume.pdf">Résumé</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
 
-
-    <br> 
-    <a href="https://www.linkedin.com/in/taha-valizadehaslani-699538124/">My LinkedIn profile</a>
-
-    <br>
-    <a href="https://github.com/TahaAslani">My GitHub</a>
-    
-    
-    
-    
-
+  <script>
+    // update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
