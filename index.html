@@ -57,7 +57,13 @@
     .meta { display: flex; gap: 14px; color: var(--ink-2); font-size: 14px; }
     .projects { display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 1000px; }
     .project { border-top: 1px solid var(--rule); padding-top: 16px; }
-    .project img { max-width: 100%; height: auto; margin: 10px 0; }
+    .project img {
+    display: block;
+    max-width: 68ch;  /* same as paragraph text width */
+    width: 100%;
+    height: auto;
+    margin: 12px auto;
+    }
     .contact dd, .contact dt { margin: 0; }
     .contact dt { color: var(--ink-2); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin-top: 18px; }
     footer { border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 16px; color: var(--ink-2); font-size: 14px; }
@@ -67,13 +73,7 @@
       .main { padding: 40px 24px 64px; }
 
 
-    .project img {
-    display: block;
-    max-width: 68ch;  /* same as paragraph text width */
-    width: 100%;
-    height: auto;
-    margin: 12px auto;
-  }
+
     }
   </style>
 </head>
@@ -159,6 +159,7 @@
   </script>
 </body>
 </html>
+
 
 
 
