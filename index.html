@@ -115,7 +115,7 @@
           <article class="project">
             <h3>Two-stage fine-tuning for learning class-imbalanced data</h3>
             <p class="muted">In practical classification scenarios, it's common to encounter an imbalanced or long tailed distribution of classes. This situation arises when certain classes within the dataset, known as minority classes, are represented by a relatively small number of samples, while others, referred to as majority classes, are characterized by a significantly larger number of samples. This non-uniform distribution of samples among classes presents a challenge to a wide array of machine learning algorithms. This issue is further exacerbated if the selected performance metric values all classes equally, irrespective of their frequency in the dataset, for reasons such as fairness and inclusivity or because of an intrinsic interest in the minority class.</p>
-            <img src="images/two-stage.jpeg" alt="Two-stage fine-tuning" style="max-width:100%; height:auto; margin:8px 0;">
+            <img src="images/two-stage.jpg" alt="Two-stage fine-tuning" style="max-width:100%; height:auto; margin:8px 0;">
             <p class="muted">To cope with these challenges, a simple modification of standard fine-tuning is employed: Two-stage fine-tuning. In Stage 1, the final layer of the pretrained model is pre-finetuned. The pre-finetuning can be done either by training the last layer with class-balanced augmented data, generated using ChatGPT, or with a class-balanced reweighting method used with the original data. In Stage 2, the standard fine-tuning is performed. This modification has several benefits: (1) it leverages pretrained representations by only finetuning a small portion of the model parameters while keeping the rest untouched; (2) it allows the model to learn an initial representation of the specific task; and importantly (3) it protects the learning of tail classes from being at a disadvantage during the model updating. The experimental results show that the proposed two-stage fine-tuning outperforms vanilla fine-tuning and state-of-the-art methods on the above datasets.</p>
           </article>
 
@@ -149,6 +149,7 @@
   </script>
 </body>
 </html>
+
 
 
 
