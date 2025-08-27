@@ -63,17 +63,16 @@
     width: 100%;
     height: auto;
     margin: 12px auto;
-    }
-    .profile-pic {
-      max-width: 33%;    /* photo width = ~1/3 of text width */
-      height: auto;
-      border-radius: 50%;  /* makes it circular */
-      margin: 0 auto 24px;
-      display: block;
-    }
     .contact dd, .contact dt { margin: 0; }
     .contact dt { color: var(--ink-2); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin-top: 18px; }
     footer { border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 16px; color: var(--ink-2); font-size: 14px; }
+    .profile-pic-top {
+      max-width: 33%;   /* makes photo 1/3 of content width */
+      height: auto;
+      border-radius: 50%; /* circular photo */
+      margin: 0 auto 24px; /* centers & adds space below */
+      display: block;
+    }
     @media (max-width: 1100px) {
       .wrap { grid-template-columns: 1fr; }
       .rail { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 24px; }
@@ -105,7 +104,7 @@
     <main class="main">
       <section id="about" class="intro">
         <h2>About Me</h2>
-        <img src="images/Taha.png" alt="Taha ValizadehAslani" class="profile-pic">
+        <img src="images/Taha.png" alt="Taha ValizadehAslani" class="profile-pic-top">
         <p class="muted">I work on <strong>Machine learning</strong>, <strong>Natural language processing</strong>, <strong>Data science</strong>,  and <strong>Information Theory</strong>. I care about models that not only get the job done, but also are theoretically proven to be optimal.<br>
           Personally, I am interested in learning about psychology, social sciences, and history.</p>
         <div class="meta" style="margin-top:8px">
@@ -396,6 +395,7 @@
   </script>
 </body>
 </html>
+
 
 
 
