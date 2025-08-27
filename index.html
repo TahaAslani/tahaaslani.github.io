@@ -64,15 +64,16 @@
     height: auto;
     margin: 12px auto;
     .contact dd, .contact dt { margin: 0; }
+    .project img {
+    display: block;
+    max-width: 68ch;  /* same as paragraph text width */
+    width: 100%;
+    height: auto;
+    border-radius: 50%;    /* keep it circular */
+    margin: 12px auto;
+    .contact dd, .contact dt { margin: 0; }
     .contact dt { color: var(--ink-2); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin-top: 18px; }
     footer { border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 16px; color: var(--ink-2); font-size: 14px; }
-    .profile-pic-top {
-      max-width: 33%;        /* about 1/3 of content width */
-      height: auto;
-      border-radius: 50%;    /* keep it circular */
-      margin: 0 24px 24px 0; /* spacing to the right and bottom */
-      float: left;           /* aligns to left and lets text wrap */
-    }
     @media (max-width: 1100px) {
       .wrap { grid-template-columns: 1fr; }
       .rail { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 24px; }
@@ -104,7 +105,7 @@
     <main class="main">
       <section id="about" class="intro">
         <h2>About Me</h2>
-<!--         <img src="images/Taha.png" alt="Taha ValizadehAslani" class="profile-pic-top"> -->
+        <img src="images/Taha.png" alt="Taha ValizadehAslani" style="max-width:40%; height:auto; margin:8px 0; border-radius: 50%;">
         <p class="muted">I work on <strong>Machine learning</strong>, <strong>Natural language processing</strong>, <strong>Data science</strong>,  and <strong>Information Theory</strong>. I care about models that not only get the job done, but also are theoretically proven to be optimal.<br>
           Personally, I am interested in learning about psychology, social sciences, and history.</p>
         <div class="meta" style="margin-top:8px">
@@ -395,4 +396,14 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
