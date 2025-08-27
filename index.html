@@ -62,15 +62,9 @@
     max-width: 68ch;  /* same as paragraph text width */
     width: 100%;
     height: auto;
-    margin: 12px auto;
-    .contact dd, .contact dt { margin: 0; }
-    .project img {
-    display: block;
-    max-width: 68ch;  /* same as paragraph text width */
-    width: 100%;
-    height: auto;
     border-radius: 50%;    /* keep it circular */
     margin: 12px auto;
+    }
     .contact dd, .contact dt { margin: 0; }
     .contact dt { color: var(--ink-2); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin-top: 18px; }
     footer { border-top: 1px solid var(--rule); margin-top: 64px; padding-top: 16px; color: var(--ink-2); font-size: 14px; }
@@ -88,7 +82,7 @@
   <div class="wrap">
     <aside class="rail">
       <h1 class="name">Taha ValizadehAslani</h1>
-      <p class="role">Machine Learning Engineer <br> Philadelphia, USA</p>
+      <p class="role">Machine Learning Engineer <br> Philadelphia, PA</p>
 <!--       <p class="role">Philadelphia, USA</p> -->
       <nav>
         <a href="#about" aria-current="page">About</a>
@@ -107,7 +101,7 @@
       <section id="about" class="intro">
         <h2>About Me</h2>
         <img src="images/Taha.png" alt="Taha ValizadehAslani" style="max-width:40%; height:auto; margin:8px 0; border-radius: 50%;">
-        <p class="muted">I work on <strong>Machine learning</strong>, <strong>Natural language processing</strong>, <strong>Data science</strong>,  and <strong>Information Theory</strong>. I care about models that not only get the job done, but also are theoretically proven to be optimal.<br>
+        <p class="muted">I work on <strong>machine learning</strong>, <strong>natural language processing</strong>, <strong>data science</strong>,  and <strong>information theory</strong>. I care about models that not only get the job done but are also theoretically proven to be optimal.<br>
           Personally, I am interested in learning about psychology, social sciences, and history.</p>
         <div class="meta" style="margin-top:8px">
           <span><a href="https://raw.githubusercontent.com/TahaAslani/tahaaslani.github.io/main/Resume_TV.pdf">Résumé</a></span>
@@ -148,7 +142,7 @@
                 </a>
               </h3>
             <p class="muted">Microbes can adapt over time, developing resistance to antibiotics—a phenomenon known as antimicrobial resistance (AMR). Once this resistance emerges, treating infections becomes much more difficult, often requiring stronger or alternative antibiotics, many of which may carry greater risks. Misuse and overuse of antibiotics have accelerated this process, putting constant evolutionary pressure on microbes and driving the rise of AMR. Today, this issue is widely regarded as one of the most serious public-health threats, with the potential to trigger crises comparable to pandemics if effective treatments are unavailable.</p>
-            <p class="muted">The aim of this project was to design and test machine learning approaches that leverage bacterial genome sequences in two ways: first, to estimate the minimum antibiotic dosage needed to combat an infection; and second, to pinpoint mutations or genes that contribute to resistance. I introduced a new feature extraction method, counting Amino-Acid k-mers, enables machine learning models to recognize recurring patterns in amino acid sequences within bacterial genes. I compared the proposed method to the existing methods, such as counting nucleotide (NT) k-mers, gene searching, and Single-nucleotide polymorphism (SNP) calling. The proposed approach not only matches or surpasses the accuracy of current techniques for predicting dosage but also offers researchers deeper insight into how resistance arises at the molecular level.</p>
+            <p class="muted">The aim of this project was to design and test machine learning approaches that leverage bacterial genome sequences in two ways: first, to estimate the minimum antibiotic dosage needed to combat an infection; and second, to pinpoint mutations or genes that contribute to resistance. I introduced a new feature-extraction method—counting amino-acid k-mers—that enables machine-learning models to recognize recurring patterns in amino acid sequences within bacterial genes. I compared the proposed method to the existing methods, such as counting nucleotide (NT) k-mers, gene searching, and single-nucleotide polymorphism (SNP) calling. The proposed approach not only matches or surpasses the accuracy of current techniques for predicting dosage but also offers researchers deeper insight into how resistance arises at the molecular level.</p>
             <img src="images/AMR.png" alt="Visualization of implemented methods for analyzing bacterial genomes" style="max-width:60%; height:auto; margin:8px 0;">
           </article>
           
@@ -158,7 +152,7 @@
                 Two-stage fine-tuning for learning class-imbalanced data
               </a>
             </h3>  
-            <p class="muted">In practical classification scenarios, it's common to encounter an imbalanced or long tailed distribution of classes. This situation arises when certain classes within the dataset, known as minority classes, are represented by a relatively small number of samples, while others, referred to as majority classes, are characterized by a significantly larger number of samples. This non-uniform distribution of samples among classes presents a challenge to a wide array of machine learning algorithms. This issue is further exacerbated if the selected performance metric values all classes equally, irrespective of their frequency in the dataset, for reasons such as fairness and inclusivity or because of an intrinsic interest in the minority class.</p>
+            <p class="muted">In practical classification scenarios, it's common to encounter an imbalanced or long-tailed distribution of classes. This situation arises when certain classes within the dataset, known as minority classes, are represented by a relatively small number of samples, while others, referred to as majority classes, are characterized by a significantly larger number of samples. This non-uniform distribution of samples among classes presents a challenge to a wide array of machine learning algorithms. This issue is further exacerbated if the selected performance metric values all classes equally, irrespective of their frequency in the dataset, for reasons such as fairness and inclusivity or because of an intrinsic interest in the minority class.</p>
             <p class="muted">To cope with these challenges, a simple modification of standard fine-tuning is employed: Two-stage fine-tuning. In Stage 1, the final layer of the pretrained model is pre-finetuned. The pre-finetuning can be done either by training the last layer with class-balanced augmented data, generated using ChatGPT, or with a class-balanced reweighting method used with the original data. In Stage 2, the standard fine-tuning is performed. This modification has several benefits: (1) it leverages pretrained representations by only finetuning a small portion of the model parameters while keeping the rest untouched; (2) it allows the model to learn an initial representation of the specific task; and importantly (3) it protects the learning of tail classes from being at a disadvantage during the model updating. The experimental results show that the proposed two-stage fine-tuning outperforms vanilla fine-tuning and state-of-the-art methods on different datasets.</p>
             <img src="images/two-stage.jpg" alt="Two-stage fine-tuning" style="max-width:60%; height:auto; margin:8px 0;">
           </article>
@@ -170,7 +164,7 @@
               </a>
             </h3>  
             <p class="muted">Peak-to-Average Power Ratio (PAPR) is a major shortcoming of Orthogonal Frequency Division Multiplexing (OFDM) systems. One promising solution to this issue is the use of Invertible-Subset Low-Density Parity-Check (IS-LDPC) codes. Although IS-LDPC codes are particularly effective at controlling PAPR with low search complexity, their error-control performance degrades as the number of invertible subsets increases.</p>
-            <p class="muted">To investigate the reasons for this performance degradation, I conducted a mathematical analysis of the code construction and proved four theorems that determine the probability of key events in construction of such codes, while also establishing bounds on the decisions that influence their performance. Based on these theorems, I proposed a heuristic search method designed to enhance the error-control performance of IS-LDPC codes, while maintaining their favorable PAPR control characteristics and low search complexity. Computer simulations show that the proposed method decreases the probability of bit error rate (BER) and frame error rate (FER) across different configurations of IS-LDPC codes.</p>
+            <p class="muted">To investigate the reasons for this performance degradation, I conducted a mathematical analysis of the code construction and proved four theorems that determine the probability of key events in the construction of such codes, while also establishing bounds on the decisions that influence their performance. Based on these theorems, I proposed a heuristic search method designed to enhance the error-control performance of IS-LDPC codes, while maintaining their favorable PAPR control characteristics and low search complexity. Computer simulations show that the proposed method decreases the bit error rate (BER) and frame error rate (FER) across different configurations of IS-LDPC codes.</p>
             <img src="images/IS-LDPC.png" alt="Mathematical analysis of construction of IS-LDPC codes" style="max-width:60%; height:auto; margin:8px 0;">
           </article>
         </div>
@@ -257,7 +251,7 @@
       
           <li>
             <a href="https://proceedings.mlr.press/v183/shi22a.html">
-              Yiwen Shi, <strong>Taha ValizadehAslani</strong>, Jing Wang, Ping Ren, Yi Zhang, Meng Hu, Liang Zh, Hualou Liang.
+              Yiwen Shi, <strong>Taha ValizadehAslani</strong>, Jing Wang, Ping Ren, Yi Zhang, Meng Hu, Liang Zhao, Hualou Liang.
               “Improving Imbalanced Learning by Pre-finetuning with Data Augmentation.”
               <em>Fourth International Workshop on Learning with Imbalanced Domains: Theory and Applications</em>. 2022.
             </a>
@@ -319,7 +313,7 @@
             <li><strong>The ADHD Explosion</strong> by Richard Scheffler and Stephen P. Hinshaw<br></li>
          </ul>
 
-        <h3>Evoulution</h3>
+        <h3>Evolution</h3>
           <ul class="book-list">  
             <li><strong>Grooming, Gossip and the Evolution of Language</strong> by Robin Dunbar</li>
             <li><strong>Catching Fire</strong> by Richard Wrangham</li>
@@ -339,7 +333,7 @@
             <li><strong>The Natural History of Religion</strong> by David Hume</li>
          </ul>        
 
-        <h3>Ecconomics and Politics</h3>
+        <h3>Economics and Politics</h3>
           <ul class="book-list"> 
             <li><strong>Economic & Philosophic Manuscripts of 1844</strong> by Karl Marx<br></li>
             <li><strong>The Signal and the Noise</strong> by Nate Silver</li>
@@ -357,13 +351,13 @@
         <h3>Literature & Fiction</h3>
           <ul class="book-list">  
             <li><strong>The Castle</strong> by Franz Kafka</li>
-            <li><strong>The Trail</strong> by Franz Kafka</li>
+            <li><strong>The Trial</strong> by Franz Kafka</li>
             <li><strong>The Metamorphosis</strong> by Franz Kafka</li>
             <li><strong>The Plague</strong> by Albert Camus</li>
             <li><strong>The Fall</strong> by Albert Camus</li>
             <li><strong>The Stranger</strong> by Albert Camus</li>
             <li><strong>The First Man</strong> by Albert Camus</li>
-            <li><strong>Flypaper</strong> by Robert Musil/li>
+            <li><strong>Flypaper</strong> by Robert Musil</li>
             <li><strong>Blindness</strong> by José Saramago</li>
             <li><strong>The Sound and the Fury</strong> by William Faulkner</li>
             <li><strong>As I Lay Dying</strong> by William Faulkner</li>
@@ -372,7 +366,7 @@
             <li><strong>Animal Farm</strong> by George Orwell</li>         
             <li><strong>The Blind Owl</strong> by Sadegh Hedayat</li>
             <li><strong>Three Drops of Blood</strong> by Sadegh Hedayat</li>
-            <li><strong>The Little Prince</strong> by Antoine de Saint-Exupéryt</li>
+            <li><strong>The Little Prince</strong> by Antoine de Saint-Exupéry</li>
             <li><strong>Anna Karenina</strong> by Leo Tolstoy</li>
          </ul>  
         
@@ -397,14 +391,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
