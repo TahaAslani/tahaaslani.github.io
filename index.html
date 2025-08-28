@@ -130,9 +130,9 @@
                 PharmBERT: An LLM for pharmaceutical texts
               </a>
             </h3>
-            <p class="muted">Pharmaceutical text found on drug labels possesses distinct features that differentiate it significantly from the regular text. This specificity stems from the specialized language, terminology, and regulatory requirements that shape the drug label domain. As a consequence, a generic large language model (LLM), often known as a vanilla model might not exhibit optimal effectiveness when applied to the drug label text. This is primarily because such generic models lack the domain-specific knowledge required to accurately interpret and process the nuances and specialized idiosyncrasies inherent in pharmaceutical texts.</p>
+            <p class="muted">Drug labels aren’t like ordinary text. They’re packed with highly specialized language, strict regulatory phrasing, and complex medical terminology. This makes them challenging for generic large language models (LLMs), which lack the domain knowledge needed to interpret pharmaceutical text with accuracy and reliability.<br>That’s where PharmBERT comes in. Built specifically for the U.S. Food and Drug Administration (FDA), PharmBERT is a first-of-its-kind, purpose-built model designed to understand the unique world of drug labels. Unlike general-purpose LLMs, PharmBERT has been trained on a vast range of pharmaceutical texts, giving it the expertise to decode complex compound names, regulatory language, and medical terminology with unmatched precision.</p>
             <img src="images/PharmBERT.png" alt="PharmBERT concept art illustrating domain-specific pretraining for drug labels" style="max-width:60%; height:auto; margin:8px 0;">
-            <p class="muted">This is where PharmBERT comes into play. Developed for the US Food and Drug Administration (FDA), PharmBERT is not just another addition to the family of BERT models; it is a purpose-built, specialized model that has been meticulously trained to grasp and interpret the unique aspects of pharmaceutical text, particularly drug labels. This model is designed to bridge the gap between general language processing capabilities and the specific demands of the drug label domain. By focusing on the peculiarities of pharmaceutical language, PharmBERT aims to provide more accurate, reliable, and contextually relevant insights from drug label texts than what would be achievable with a general-purpose model. In creating PharmBERT, we have not only leveraged the powerful architecture of BERT models but also enriched it with a training regime that includes a vast and diverse range of pharmaceutical texts. This specialized training ensures that PharmBERT is adept at handling the kind of linguistic challenges that are typical in drug labels, such as complex compound names, medical terminology, and regulatory language. The outcome is a model that is finely tuned to deliver enhanced performance in the analysis of drug label text, thereby offering a valuable tool for pharmaceutical companies, healthcare professionals, and regulatory bodies in their endeavors to understand and utilize the wealth of information contained in drug labels.</p>
+            <p class="muted">PharmBERT bridges the gap between powerful language processing and the strict demands of the pharmaceutical industry. The result: more accurate insights, greater reliability, and contextually relevant analysis that general models simply can’t match.<br>With PharmBERT, pharmaceutical companies, healthcare professionals, and regulators gain a specialized tool that transforms drug-label text into actionable knowledge—delivering clarity, confidence, and compliance at every step.</p>
           </article>
 
           <article class="project">
@@ -153,8 +153,16 @@
               </a>
             </h3>  
             <p class="muted">In practical classification scenarios, it's common to encounter an imbalanced or long-tailed distribution of classes. This situation arises when certain classes within the dataset, known as minority classes, are represented by a relatively small number of samples, while others, referred to as majority classes, are characterized by a significantly larger number of samples. This non-uniform distribution of samples among classes presents a challenge to a wide array of machine learning algorithms. This issue is further exacerbated if the selected performance metric values all classes equally, irrespective of their frequency in the dataset, for reasons such as fairness and inclusivity or because of an intrinsic interest in the minority class.</p>
-            <p class="muted">To cope with these challenges, a simple modification of standard fine-tuning is employed: Two-stage fine-tuning. In Stage 1, the final layer of the pretrained model is pre-finetuned. The pre-finetuning can be done either by training the last layer with class-balanced augmented data, generated using ChatGPT, or with a class-balanced reweighting method used with the original data. In Stage 2, the standard fine-tuning is performed. This modification has several benefits: (1) it leverages pretrained representations by only finetuning a small portion of the model parameters while keeping the rest untouched; (2) it allows the model to learn an initial representation of the specific task; and importantly (3) it protects the learning of tail classes from being at a disadvantage during the model updating. The experimental results show that the proposed two-stage fine-tuning outperforms vanilla fine-tuning and state-of-the-art methods on different datasets.</p>
+            <p class="muted">To cope with these challenges, a simple modification of standard fine-tuning is employed: Two-stage fine-tuning. In Stage 1, the final layer of the pretrained model is pre-finetuned. The pre-finetuning can be done either by training the last layer with class-balanced augmented data, generated using ChatGPT, or with a class-balanced reweighting method used with the original data. In Stage 2, the standard fine-tuning is performed.</p>
             <img src="images/two-stage.jpg" alt="Two-stage fine-tuning" style="max-width:60%; height:auto; margin:8px 0;">
+            <p class="muted">This modification has several benefits:
+            <ol>
+              <li class="muted">It leverages pretrained representations by only finetuning a small portion of the model parameters while keeping the rest untouched</li>
+              <li class="muted">It allows the model to learn an initial representation of the specific task</li>
+              <li class="muted">It protects the learning of tail classes from being at a disadvantage during the model updating</li>
+            </ol>
+            </p>
+            <p class="muted">The experimental results show that the proposed two-stage fine-tuning outperforms vanilla fine-tuning and state-of-the-art methods on different datasets.</p>
           </article>
 
           <article class="project">
@@ -179,10 +187,6 @@
           <li>
             <strong>Comcast</strong> — Software Engineer<br>
             <span class="muted">Philadelphia, PA • Sept 2023 – Present</span>
-          </li>
-          <li>
-            <strong>Drexel University</strong> — Graduate Research and Teaching Assistant<br>
-            <span class="muted">Philadelphia, PA • Sept 2018 – Sept 2023</span>
           </li>
         </ul>
       </section>      
@@ -270,7 +274,7 @@
           </li>
       
           <li>
-            <a href="https://www.mdpi.com/2079-7737/9/11/365">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7694136/">
               <strong>Taha ValizadehAslani</strong>, Zhengqiao Zhao, Bahrad A Sokhansanj, Gail L Rosen.
               “Amino Acid k-mer Feature Extraction for Quantitative Antimicrobial Resistance (AMR) Prediction by Machine Learning and Model Interpretation for Biological Insights.”
               <em>Biology</em> 9(11), 365. 2020.
