@@ -144,6 +144,7 @@
             <p class="muted">Microbes can adapt over time, developing resistance to antibiotics—a phenomenon known as antimicrobial resistance (AMR). Once this resistance emerges, treating infections becomes much more difficult, often requiring stronger or alternative antibiotics, many of which may carry greater risks. Misuse and overuse of antibiotics have accelerated this process, putting constant evolutionary pressure on microbes and driving the rise of AMR. Today, this issue is widely regarded as one of the most serious public-health threats, with the potential to trigger crises comparable to pandemics if effective treatments are unavailable.</p>
             <p class="muted">The aim of this project was to design and test machine learning approaches that leverage bacterial genome sequences in two ways: first, to estimate the minimum antibiotic dosage needed to combat an infection; and second, to pinpoint mutations or genes that contribute to resistance. I introduced a new feature-extraction method—counting amino-acid k-mers—that enables machine-learning models to recognize recurring patterns in amino acid sequences within bacterial genes. I compared the proposed method to the existing methods, such as counting nucleotide (NT) k-mers, gene searching, and single-nucleotide polymorphism (SNP) calling. The proposed approach not only matches or surpasses the accuracy of current techniques for predicting dosage but also offers researchers deeper insight into how resistance arises at the molecular level.</p>
             <img src="images/AMR.png" alt="Visualization of implemented methods for analyzing bacterial genomes" style="max-width:60%; height:auto; margin:8px 0;">
+            <p class="muted">My proposed pipeline reveals that although the truncated version of the tetracycline resistance gene <strong><em>tet(D)</em></strong> is listed as a resistance-conferring gene in the AMR database, <em>Klebsiella pneumoniae</em> strains carrying this version are actually susceptible to antibiotics. This discovery changes our understanding of the function of the <strong><em>tet(D)</em></strong> gene.</p> 
           </article>
           
           <article class="project">
@@ -417,3 +418,4 @@
   </script>
 </body>
 </html>
+
