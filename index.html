@@ -173,16 +173,6 @@
 
           <article class="project">
             <h3>
-              Mathematical analysis and improvement of IS-LDPC codes
-            </h3>
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1874490718302350" target="_blank" rel="noreferrer noopener">📄 Paper</a>  
-            <p class="muted">Peak-to-Average Power Ratio (PAPR) is a major shortcoming of Orthogonal Frequency Division Multiplexing (OFDM) systems. One promising solution to this issue is the use of Invertible-Subset Low-Density Parity-Check (IS-LDPC) codes. Although IS-LDPC codes are particularly effective at controlling PAPR with low search complexity, their error-control performance degrades as the number of invertible subsets increases.</p>
-            <p class="muted">To investigate the reasons for this performance degradation, I conducted a mathematical analysis of the code construction and proved four theorems that determine the probability of key events in the construction of such codes, while also establishing bounds on the decisions that influence their performance. Based on these theorems, I proposed a heuristic search method designed to enhance the error-control performance of IS-LDPC codes, while maintaining their favorable PAPR control characteristics and low search complexity. Computer simulations show that the proposed method decreases the bit error rate (BER) and frame error rate (FER) across different configurations of IS-LDPC codes.</p>
-            <img src="images/IS-LDPC.png" alt="Mathematical analysis of construction of IS-LDPC codes" style="max-width:60%; height:auto; margin:8px 0;">
-          </article>
-
-          <article class="project">
-            <h3>
               LayerNorm: A key component in parameter-efficient fine-tuning
             </h3>
             <a href="https://arxiv.org/abs/2403.20284" target="_blank" rel="noreferrer noopener">📄 Paper</a>    
@@ -190,6 +180,16 @@
             <p class="muted">Transformer-based models achieve strong performance across many NLP tasks. However, due to their large number of parameters, these models are computationally expensive to fine-tune for downstream tasks. This cost grows as the number of tasks increases. Furthermore, the combination of many parameters and limited labeled data for a given task can lead to overfitting and poor generalization on out-of-distribution data. A popular approach to mitigate this issue is to fine-tune only a small subset of the model parameters rather than performing full fine-tuning.</p>
             <p class="muted">To find a computationally efficient find tuning method, I first examine how different components of BERT change during full fine-tuning and identify LayerNorm as a key component. I show that LayerNorm has the highest Fisher information among all components of BERT. This is consistent with findings from other studies, which show that—unlike other components—the performance of BERT-family models degrades significantly when LayerNorm is disabled. This further underscores the critical role of this component.  Based on these observations, I perform parameter-efficient fine-tuning by training only the LayerNorm component. My results demonstrate that fine-tuning only LayerNorm achieves comparable performance to another state-of-the-art parameter-efficient tuning (bias-only tuning), while requiring just one-fifth the number of parameters. Moreover, I show that strong performance can still be obtained when only a portion of LayerNorm is trained. Importantly, this portion can be selected based on information from the target downstream task or even from other tasks, without sacrificing performance. Achieving strong results with subsets of LayerNorm chosen from unrelated tasks highlights that these subsets can be optimized in a problem-agnostic manner.</p>
             <img src="images/LayerNorm.png" alt="LayerNorm: A key component in parameter-efficient fine-tuning" style="max-width:30%; height:auto; margin:8px 0;">
+          </article>
+          
+          <article class="project">
+            <h3>
+              Mathematical analysis and improvement of IS-LDPC codes
+            </h3>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1874490718302350" target="_blank" rel="noreferrer noopener">📄 Paper</a>  
+            <p class="muted">Peak-to-Average Power Ratio (PAPR) is a major shortcoming of Orthogonal Frequency Division Multiplexing (OFDM) systems. One promising solution to this issue is the use of Invertible-Subset Low-Density Parity-Check (IS-LDPC) codes. Although IS-LDPC codes are particularly effective at controlling PAPR with low search complexity, their error-control performance degrades as the number of invertible subsets increases.</p>
+            <p class="muted">To investigate the reasons for this performance degradation, I conducted a mathematical analysis of the code construction and proved four theorems that determine the probability of key events in the construction of such codes, while also establishing bounds on the decisions that influence their performance. Based on these theorems, I proposed a heuristic search method designed to enhance the error-control performance of IS-LDPC codes, while maintaining their favorable PAPR control characteristics and low search complexity. Computer simulations show that the proposed method decreases the bit error rate (BER) and frame error rate (FER) across different configurations of IS-LDPC codes.</p>
+            <img src="images/IS-LDPC.png" alt="Mathematical analysis of construction of IS-LDPC codes" style="max-width:60%; height:auto; margin:8px 0;">
           </article>
 
         </div>
@@ -422,6 +422,7 @@
   </script>
 </body>
 </html>
+
 
 
 
