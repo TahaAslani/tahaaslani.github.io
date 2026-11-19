@@ -126,6 +126,15 @@
         <div class="projects">
 
           <article class="project">
+            <h3>ASCEND: Automated Shockproof Cost-Efficient Network Design</h3>
+            <a href="https://arxiv.org/abs/2611.21824" target="_blank" rel="noreferrer noopener">📄 Paper</a>
+            <p class="muted">Designing large-scale IP networks requires balancing two competing goals: keeping the network resilient to failures that could affect many customers, and controlling the cost of building and operating the network. As the number of possible connections grows, finding a robust and cost-efficient network design becomes a challenging optimization problem.</p>
+            <p class="muted">ASCEND addresses this problem with a two-level optimization framework. At the outer level, multi-objective particle swarm optimization (MOPSO) selects core sites and circuits. At the inner level, an integral multi-commodity flow formulation selects edge circuits and maps connections onto optical paths, prioritizing resource disjointness and latency. Candidate designs are evaluated for both implementation cost and vulnerability under probabilistic failure scenarios.</p>
+            <img src="images/ASCEND.png" alt="ASCEND network design and optimization framework" style="max-width:60%; height:auto; margin:8px 0;">
+            <p class="muted">Experiments on multiple real-world networks show that ASCEND finds designs that outperform a manually engineered baseline on both network resiliency and implementation cost.</p>
+          </article>
+
+          <article class="project">
             <h3>
               PharmBERT: An LLM for pharmaceutical texts
             </h3>
@@ -250,6 +259,13 @@
       
         <h3>Journal and Conference Papers</h3>
         <ul class="pub-list">
+          <li>
+            <a href="https://arxiv.org/abs/2611.21824">
+              <strong>Taha ValizadehAslani</strong>, Vaibhav Phatarpekar, Cameron Brackmann, Bala Ramachandran.
+              “ASCEND: Automated Shockproof Cost-Efficient Network Design.” arXiv:2611.21824. 2026.
+            </a>
+          </li>
+
           <li>
             <a href="https://doi.org/10.1016/j.neucom.2024.127801">
               <strong>Taha ValizadehAslani</strong>, Yiwen Shi, Jing Wang, Ping Ren, Yi Zhang, Meng Hu, Liang Zhao, Hualou Liang.
@@ -437,7 +453,6 @@
   </script>
 </body>
 </html>
-
 
 
 
